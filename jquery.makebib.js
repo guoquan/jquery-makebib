@@ -114,7 +114,7 @@
   $.fn.makebib.ensure_csl = function(csl_style) {
     var ajax_csl = null;
     if (!(csl_style in Cite.plugins.config.get("@csl").templates.data)) {
-      ajax_csl = $.get(csl_style).then(function(csl_data) {
+      ajax_csl = $.get(csl_style, {dataType:"text"}).then(function(csl_data) {
         // use then not done, to make sure this chain waits for the following code
         console.debug(csl_data);
         Cite.plugins.config.get("@csl").templates.add(csl_style, csl_data);
