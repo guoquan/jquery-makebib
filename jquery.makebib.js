@@ -98,6 +98,13 @@
           options.done.call($bib_node);
         }
       });
+    }).error(function (
+      csl_retval,
+      bib_retval
+    ) {
+      console.debug("Something just went wrong!");
+      console.debug(csl_retval);
+      console.debug(bib_retval);
     });
     // return this (the invoking jquery object) to make it chainable
     return this;
