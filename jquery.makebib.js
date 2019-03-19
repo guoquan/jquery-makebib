@@ -28,7 +28,7 @@
     $.when(
       ajax_csl,
       ajax_bib
-    ).then(function(
+    ).done(function(
       csl_retval, // do not need, but we want to wait for it
       bib_retval
     ) {
@@ -98,7 +98,7 @@
           options.done.call($bib_node);
         }
       });
-    }).error(function (
+    }).fail(function (
       csl_retval,
       bib_retval
     ) {
