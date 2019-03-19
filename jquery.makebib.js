@@ -99,12 +99,12 @@
         }
       });
     }).fail(function (
-      csl_retval,
-      bib_retval
+      jqXHR, textStatus, statusText
     ) {
       console.debug("Something just went wrong!");
-      console.debug(csl_retval);
-      console.debug(bib_retval);
+      console.debug(jqXHR);
+      console.debug(textStatus);
+      console.debug(statusText);
     });
     // return this (the invoking jquery object) to make it chainable
     return this;
