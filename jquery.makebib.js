@@ -22,6 +22,7 @@
     var last_modified = new Date(document.lastModified);
     //var last_modified = new Date("1987/8/25");
     $bib_node.prop("last_modified", last_modified);
+    $bib_node.prop("cites", []);
 
     var ajax_csl = $.fn.makebib.ensure_csl(options.csl_style);
     var ajax_bib = $.get(bib_json);
@@ -65,6 +66,7 @@
                 console.debug(last_modified);
               }
               var cite = new Cite(data);
+              $bib_node.prop("cites").push(cite);
               var cite_html = cite.format("bibliography", {
                 format: "html",
                 template: options.csl_style,
